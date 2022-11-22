@@ -1,0 +1,32 @@
+name: "suppa_generateevents"
+description: generate the events from the GTF file
+keywords:
+  - sort
+tools:
+  - "suppa":
+      description: "A tool to study splicing across multiple conditions at high speed and accuracy."
+      homepage: "https://github.com/comprna/SUPPA"
+      documentation: "https://github.com/comprna/SUPPA"
+      tool_dev_url: "https://github.com/comprna/SUPPA"
+      doi: "https://doi.org/10.1186/s13059-018-1417-1"
+      licence: "['MIT License']"
+
+
+input:
+  - gtf:
+      type: file
+      description: GTF file
+      pattern: "*.{gtf}"
+
+output:
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  - event:
+      type: file
+      description: events from the GTF file
+      pattern: "event"
+
+authors:
+  - "@tijeco"
