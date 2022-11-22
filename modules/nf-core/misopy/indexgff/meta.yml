@@ -1,0 +1,36 @@
+name: "misopy_indexgff"
+description: Index a GFF file containing descriptions of isoforms/alternative splicing events to be quantitated (e.g. skipped exons) 
+keywords:
+  - index
+  - annotation
+  - isoforms
+  - splice
+tools:
+  - "misopy":
+      description: "Mixture of Isoforms model (MISO) for isoform quantitation using RNA-Seq"
+      homepage: "http://hollywood.mit.edu/burgelab/miso/"
+      documentation: https://miso.readthedocs.io/en/fastmiso/
+      tool_dev_url: "https://github.com/yarden/MISO"
+      doi: "https://doi.org/10.1038/nmeth.1528"
+      licence: "['GPL v2']"
+
+
+input:
+  - SE_gff3:
+      type: file
+      description: gff3 file containing descriptions of isoforms/alternative splicing events to be quantitated (e.g. skipped exons)
+      pattern: "*.{gff3}"
+
+
+output:
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  - index:
+      type: file
+      description: a directory containing the indexed skipped exon events.
+      pattern: "indexed_SE_events"
+
+authors:
+  - "@tijeco"
