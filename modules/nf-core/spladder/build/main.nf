@@ -8,7 +8,7 @@ process SPLADDER_BUILD {
 
     conda (params.enable_conda ? "YOUR-TOOL-HERE" : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'biowardrobe2/spladder:v0.0.1 ':
+        'biowardrobe2/spladder:v0.0.1':
         'biowardrobe2/spladder:v0.0.1'  }"
 
     input:
