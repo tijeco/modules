@@ -1,0 +1,65 @@
+name: "spladder_build"
+
+description: write your description here
+keywords:
+  - splice
+  - aternative splicing
+  - isoforms
+  - transcriptomics
+tools:
+  - "spladder":
+
+      description: "Tool for the detection and quantification of alternative splicing events from RNA-Seq data"
+      homepage: "https://github.com/ratschlab/spladder"
+      documentation: "https://spladder.readthedocs.io/"
+      tool_dev_url: "https://github.com/ratschlab/spladder"
+      doi: "https://doi.org/10.1093%2Fbioinformatics%2Fbtw076"
+      licence: "BSD"
+
+
+input:
+
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test' ]
+
+
+  - bam:
+      type: file
+      description: BAM file
+      pattern: "*.bam"
+  
+  - bai:
+      type: file
+      description: BAI file
+      pattern: "*.bai"
+  
+  - gtf:
+      type: file
+      description: GTF file
+      pattern: "*.gtf"
+
+
+
+output:
+  
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test' ]
+  
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+
+  - spladder_out_dir:
+      type: file
+      description: Output directory for spladder
+      pattern: "*_spladder"
+
+authors:
+  - "@tijeco"
